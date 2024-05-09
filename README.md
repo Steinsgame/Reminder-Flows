@@ -11,8 +11,14 @@ Tools Used for the flow
 
 ## Solution Build
 Kindly find below the detailed flow Chart.
+![Flow Chart](Reminder-Flow/Reminder-Automation.png)
 1. Trigger- Recurrence (Set to trigger everyday)
 2. List rows present in table action (This allows the user to extract the dynamic contents from the excel workbook), Under the Filter Query section Column_name eq'@{formatDateTime(convertFromUtc(utcNow(),'W. Central Africa Standard Time'),'yyyy-MM-dd')}' The expression returns the current date, so it checks if the reminderdate column is equal to the current Year.
+<img src="Reminder-Flow/List-Rows.png" alt="Filter condition" width="400" height="400">
 3. Select Action (Selects the body value and maps it to the email column)
+<img src="Reminder-Flow/Select-action.png" alt="Select Action" width="400" height="400">
 4. Compose (This is a union of the output of the select action)
+<img src="Reminder-Flow/Select-action.png" alt="Compose" width="400" height="400">
 5. Apply to each action (Filter array- From the body/Value dynamic content, and checks if the email is equal to the current item of the apply to each. Then you have a send an email action, which is addressed to the current item, and the necessary content of the mail can be filled out by the user.
+<img src="Reminder-Flow/Filter-Array.png" alt="Compose" width="400" height="400">
+<img src="Reminder-Flow/Birthday-Mail.png" alt="Compose" width="400" height="400">
